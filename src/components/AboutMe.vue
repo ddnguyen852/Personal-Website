@@ -38,6 +38,7 @@ export default {
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr;
             grid-template-areas: "item1 item2";
+            padding-top: 10vh;
         }
         .item1 {
             grid-area: item1;

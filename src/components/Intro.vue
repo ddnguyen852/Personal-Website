@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-    <v-parallax class="griditem-header" height="100%" :src=parallaxSrc>
+    <v-parallax id="parallax-header" class="griditem-header" :src=parallaxSrc>
       <div class="centered">
       <h2 class="margin-bottom-7px">Hi, I'm Denny.</h2>
       <p class="padding-bottom-15px paragraph">
@@ -15,25 +15,25 @@
          Worlds apart, yet eerily similar. I aim to get the best of both.
       </p>
     </div>
-    <v-parallax class="griditem-parallax2" height="100%" :src=items[0].src>
+    <v-parallax class="griditem-parallax2" :src=items[0].src>
     </v-parallax>
     <div class="griditem-quote">
-      <h4>I don't want to survive. I want to live.</h4>
-    </div>
-      <div class="griditem-footer">
-        <div>
+      <h4 class="griditem1">I don't want to survive. I want to live.</h4>
+      <div class="griditem2">
+        <div class="griditem3">
           <a class="white-link" href="#">Home</a>
           <a class="white-link" href="#">About Me</a>
           <a class="white-link" href="#">Education</a>
           <a class="white-link" href="#">Projects</a>
         </div>
-        <div>
+      </div>
+        <div class="griditem4">
           <a href="https://www.facebook.com/denny.nguyen.39" class="fa fa-facebook"></a>
           <a href="https://www.instagram.com/denstagrammm/?hl=en" class="fa fa-instagram"></a>
           <a href="https://www.youtube.com/channel/UCmk_8rQT-1kznyNawHIHMYg" class="fa fa-youtube-play"></a>
           <a href="https://www.linkedin.com/in/denny-nguyen-8329a5b6/" class="fa fa-linkedin"></a>
         </div>
-      </div>
+    </div>
 </div>
   </template>
 <script>
@@ -74,7 +74,7 @@ export default {
   padding: 0;
   max-width: 100% !important;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(11, 18vh);
+  grid-template-rows: repeat(10, 25vh);
   grid-auto-flow: dense;
   grid-template-areas:   "header header header header"
   "header header header header"
@@ -86,7 +86,6 @@ export default {
   "parallax2 parallax2 parallax2 parallax2"
   "parallax2 parallax2 parallax2 parallax2"
   "quote quote quote quote"
-  ". footer footer ."
 }
 div a {
   padding: 5px;
@@ -102,8 +101,13 @@ div a {
 }
 .griditem-header {
   grid-area: header;
-  width: 100vw;
-  height: 100vh;
+}
+#parallax-header {
+  width:100%;
+  height:100% !important;
+}
+#parallax-header div img {
+  top: -36%;
 }
 .griditem-description {
   grid-area: submain;
@@ -120,14 +124,26 @@ div a {
 .griditem-parallax2 {
   grid-area: parallax2;
 }
-.griditem-dance {
-  grid-area: dance;
-  color: black;
-}
 .griditem-quote {
   grid-area:quote;
-  align-self: center;
-  justify-self: center;
+  display: grid;
+  grid-template-rows: (3, 33%);
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: start;
+}
+.griditem1 {
+  grid-column: 2 / span 2;
+}
+.griditem2 {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+}
+.griditem3 {
+  align-self: start;
+}
+.griditem4{
+  grid-column: 2 / span 2;
 }
 .griditem-footer {
   grid-area:footer;
@@ -171,7 +187,7 @@ div a {
         padding: 0;
         max-width: 100% !important;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(11, 150px);
+        grid-template-rows: repeat(11, 25vh);
         grid-auto-flow: dense;
         grid-template-areas:   "header header header header"
         "header header header header"

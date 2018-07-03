@@ -29,7 +29,7 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar app fixed>
+    <v-toolbar app fixed class="pa-1">
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Denny Nguyen</v-toolbar-title>
       <v-spacer></v-spacer>
